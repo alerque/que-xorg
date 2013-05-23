@@ -1,13 +1,5 @@
 #!/bin/sh
 
-HOSTNAME=`hostname`
-XMODMAPRC=~/.xmodmaprc-$HOSTNAME
-
-if [ ! -f $XMODMAPRC ]; then
-	:
-	#XMODMAPRC=~/.xmodmaprc
-fi
-
 xhost +
 
 xset -dpms
@@ -20,7 +12,9 @@ xset r rate 250 50
 xsetroot -solid black
 xsetroot -cursor_name arrow
 
-case $HOSTNAME in
+case $(hostname) in
+	laylek)
+		;;
 	zebra|crab|octopus|partridge)
 		set -x
 		gnome-settings-daemon
@@ -31,7 +25,7 @@ case $HOSTNAME in
 		nm-applet --sm-disable &
 		#vino-server --sm-disable
 		dropbox start -i
-		xmodmap $XMODMAPRC
+		xmodmap .xmodmaprc
 		exec awesome
 		;;
 	lemur|pars)
@@ -42,12 +36,9 @@ case $HOSTNAME in
 		#urxvt -e ssh-add ~/.ssh/id_rsa
 		#ssh camelion -D localhost:8080 &
 		dropbox start -i
-		#xmodmap $XMODMAPRC
-		#xmodmap -e keycode\ 48\ \=\ apostrophe\ quotedbl
 		xmodmap -e keycode\ 48\ \=\ apostrophe\ quotedbl
 		xmodmap ~/.xmodmaprc
 		exec awesome
-		#exec gnome-session
 		;;
 	ibex)
 		/usr/lib/gnome-settings-daemon E_SettingsDaemon &
@@ -57,13 +48,12 @@ case $HOSTNAME in
 		pactl load-module module-alsa-sink device=bluetooth
 		syndaemon -i .5 -t -d
 		synclient VertEdgeScroll=0 VertTwoFingerScroll=1 HorizTwoFingerScroll=1 ClickFinger1=1 ClickFinger2=3 ClickFinger3=3 TapButton1=1 TapButton2=2 TapButton3=3
-		xmodmap $XMODMAPRC
+		xmodmap .xmodmaprc
 		#feh --bg-center Desktop/sunset_bg.jpg
 		dropbox start -i
 		exec awesome
 		;;
 	*)
-		xmodmap $XMODMAPRC
 		exec twm
 		;;
 esac
