@@ -1,0 +1,94 @@
+*ScrollbarPlacement: left
+
+Ddd*cutCopyPasteBindings: Motif
+
+pterm.ScrollbackLines: 5000
+pterm*ScrollOnDisp: 0
+pterm*ScrollOnKey: 0
+pterm*ScrollBar: 0
+pterm*Font: -bitstream-bitstream vera sans mono-medium-r-normal-*-*-120-*-*-m-*-iso10646-1
+pterm*BoldAsColor: 0
+pterm*Colour0: 200,200,200
+pterm*Colour1: 255,255,255
+pterm*WindowBorder: 2
+pterm*WarnOnClose: 0
+pterm*TerminalType: xterm-color
+pterm*NoRemoteResize: 1
+pterm*BackspaceIsDelete: 0
+pterm.WindowBorder: 5
+
+xterm*background: black
+xterm*foreground: white
+!xterm*font: -b&h-lucida-*-r-*-*-*-120-*-*-*-*-*-*
+!xterm*font: -adobe-helvetica-*-r-*-*-*-120-*-*-*-*-*-*
+xterm*faceSize: 9 
+xterm*faceName: vera sans mono
+xterm*saveLines: 50000
+xterm*scrollLines: 50000
+xterm*geometry: 90x30
+xterm*scrollBar: false
+xterm*boldMode: false
+
+OpenOffice*geometry: 1024x768
+
+aterm*transparent: true
+aterm*background: white
+aterm*foreground: black
+!aterm*font: -adobe-courier-medium-r-normal-*-*-140-*-*-*-*-*-*
+aterm*saveLines: 50000
+aterm*scrollBar: false
+
+xosview*captions: false
+xosview*labels: true
+xosview*cpu: true
+xosview*load: false
+xosview*mem: true
+xosview*swap: false
+xosview*battery: false
+xosview*gfx: false
+xosview*net: true
+xosview*page: false
+xosview*disk: true
+xosview*interrupts: false
+xosview*irqrate: false
+xosview*background: black
+
+xpdf*geometry: 600x800
+xpdf*initialZoom: page
+
+
+Rxvt*termName: rxvt
+
+## borderless and no scrollbar
+URxvt*scrollBar_right: false
+URxvt*scrollBar: false
+URxvt*borderLess: false
+
+## teh transparency stuff
+URxvt*inheritPixmap: true
+URxvt*tintColor: white
+URxvt*shading: 10
+
+## geometry and font
+#URxvt*geometry: 84×24
+#URxvt*font: -bitstream-bitstream vera sans mono-medium-r-normal-*-*-100-*-*-m-*-iso10646-1
+
+## change default colors
+URxvt*background: #000000
+URxvt*foreground: #FFFFFF
+URxvt*color0: #000000
+URxvt*color1: #A80000
+URxvt*color2: #00A800
+URxvt*color3: #A85400
+URxvt*color4: #0000A8
+URxvt*color5: #A800A8
+URxvt*color6: #00A8A8
+URxvt*color7: #A8A8A8
+URxvt*color8: #545054
+URxvt*color9: #F85450
+URxvt*color10: #50FC50
+URxvt*color11: #F2FC50
+URxvt*color12: #5054F8
+URxvt*color13: #F854F8
+URxvt*color14: #50FCF8
+URxvt*color15: #F8FCF9
