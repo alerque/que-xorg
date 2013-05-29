@@ -64,7 +64,7 @@ URxvt*scrollBar_right: false
 URxvt*scrollBar: false
 URxvt*borderLess: false
 
-## teh transparency stuff
+## the transparency stuff
 URxvt*inheritPixmap: true
 URxvt*tintColor: white
 URxvt*shading: 10
