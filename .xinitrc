@@ -1,4 +1,7 @@
-#!/bin/sh -l
+#!/bin/sh
+
+# For some reason SLIM isn't picking up this stuff before executing, so make sure we have a sane environment off the block
+source /etc/profile
 
 myxsets() {
 	xhost +
@@ -42,13 +45,14 @@ case $(hostname) in
 				/usr/lib64/gnome-settings-daemon E_SettingsDaemon &
 				~/bin/set_background_worldlight.zsh &
 				pulseaudio -D
-				eval `ssh-agent -s`
-				sleep 1
-				urxvt -e ssh-add ~/.ssh/id_rsa
-				urxvt -e ssh-add ~/.ssh/github
-				#ssh camelion -D localhost:8080 &
+				export SSH_ASKPASS=$(which ssh-askpass-fullscreen)
+				eval $(ssh-agent -s)
+				ssh-add ~/.ssh/id_rsa
+				ssh-add ~/.ssh/github
+				ssh-add ~/.ssh/pld
 				dropbox start -i
 				exec $DE
+				eval $(ssh-agent -k)
 			;;
 		esac
 		;;
