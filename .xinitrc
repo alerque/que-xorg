@@ -47,10 +47,12 @@ case $(hostname) in
 				pulseaudio -D
 				export SSH_ASKPASS=$(which ssh-askpass-fullscreen)
 				eval $(ssh-agent -s)
+				{
 				ssh-add ~/.ssh/id_rsa
 				ssh-add ~/.ssh/github
 				ssh-add ~/.ssh/pld
 				dropbox start -i
+				} &
 				exec $DE
 				eval $(ssh-agent -k)
 			;;
