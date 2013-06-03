@@ -72,10 +72,11 @@ URxvt*shading: 10
 ## geometry and font
 #URxvt*geometry: 84×24
 #URxvt*font: -bitstream-bitstream vera sans mono-medium-r-normal-*-*-100-*-*-m-*-iso10646-1
+#URxvt*font: xft:Liberation Mono:pixelsize=11:antialias=true:hinting=true
 
 ## change default colors
-URxvt*background: #000000
-URxvt*foreground: #FFFFFF
+URxvt*background: #111111
+URxvt*foreground: #EEEEEE
 URxvt*color0: #000000
 URxvt*color1: #A80000
 URxvt*color2: #00A800
