@@ -32,8 +32,26 @@ case $1 in
 esac
 
 case $(hostname) in
-	laylek)
+	leylek)
+		myxsets
+		export SSH_ASKPASS="/usr/libexec/openssh/gnome-ssh-askpass"
+		eval $(gnome-keyring-daemon)
+		eval $(ssh-agent -s)
+		{
+		/usr/libexec/gnome-settings-daemon &
+		nm-applet --sm-disable &
+		bluetooth-applet &
+		abrt-applet &
+		gnome-sound-applet &
+		~/bin/set_background_worldlight.zsh &
+		pulseaudio -D
+		dropbox start
+		ssh-add $HOME/.ssh/id_rsa
+		ssh-add $HOME/.ssh/github
+		ssh-add $HOME/.ssh/pld
+		} &
 		exec $DE
+		eval $(ssh-agent -k)
 		;;
 	lemur|pars)
 		case $DE in
