@@ -60,16 +60,18 @@ case $(hostname) in
 				;;
 			*)
 				myxsets
-				/usr/lib64/gnome-settings-daemon E_SettingsDaemon &
-				~/bin/set_background_worldlight.zsh &
-				pulseaudio -D
-				export SSH_ASKPASS=$(which ssh-askpass-fullscreen)
+				export SSH_ASKPASS="/usr/lib64/openssh/ssh/ssh-askpass"
 				eval $(ssh-agent -s)
 				{
+				eval $(gnome-keyring-daemon)
+				/usr/lib64/gnome-settings-daemon E_SettingsDaemon &
+				pulseaudio -D
+				dropbox start
+				parcellite &
+				~/bin/set_background_worldlight.zsh &
 				ssh-add ~/.ssh/id_rsa
 				ssh-add ~/.ssh/github
 				ssh-add ~/.ssh/pld
-				dropbox start -i
 				} &
 				exec $DE
 				eval $(ssh-agent -k)
