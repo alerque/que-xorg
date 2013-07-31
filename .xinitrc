@@ -3,6 +3,17 @@
 # For some reason SLIM isn't picking up this stuff before executing, so make sure we have a sane environment off the block
 source /etc/profile
 
+# Some Xorg init systems don't get this set right, and it's succesfully set differnet ways on different systems
+test -n "$HOSTNAME" || HOSTNAME=$(uname -n)
+test -n "$HOSTNAME" || HOSTNAME=$(hostname)
+
+# Convenience functions 
+hostis() {
+	test "$HOSTNAME" = "$1"
+	return $?
+}
+
+# This stuff gets set on pretty much all systems, so consolidate
 myxsets() {
 	xhost +
 
@@ -17,9 +28,6 @@ myxsets() {
 	xsetroot -cursor_name arrow
 }
 
-date >> /tmp/genx
-env >> /tmp/genx
-
 # SLIM calls this script with an argument of the DE chosen at
 # the login prompt instead of using xsession files
 case $1 in
@@ -31,7 +39,7 @@ case $1 in
 		;;
 esac
 
-case $(hostname) in
+case $HOSTNAME in
 	leylek)
 		myxsets
 		export SSH_ASKPASS="/usr/libexec/openssh/gnome-ssh-askpass"
@@ -54,6 +62,7 @@ case $(hostname) in
 		eval $(ssh-agent -k)
 		;;
 	lemur|pars)
+		hostis pars && xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output VGA-1 --mode 1680x1050 --pos 1920x0 --rotate right
 		case $DE in
 			gnome-session)
 				exec $DE
