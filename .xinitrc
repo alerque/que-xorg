@@ -1,5 +1,9 @@
 #!/bin/sh
 
+{
+date
+set -x
+
 # For some reason SLIM isn't picking up this stuff before executing, so make sure we have a sane environment off the block
 source /etc/profile
 
@@ -46,10 +50,10 @@ case $(hostname) in
 		~/bin/set_background_worldlight.zsh &
 		pulseaudio -D
 		dropbox start
+		} &
 		ssh-add $HOME/.ssh/id_rsa
 		ssh-add $HOME/.ssh/github
 		ssh-add $HOME/.ssh/pld
-		} &
 		exec $DE
 		eval $(ssh-agent -k)
 		;;
@@ -109,3 +113,4 @@ case $(hostname) in
 		exec $DE || exec twm
 		;;
 esac
+} 2> /tmp/slimdb
