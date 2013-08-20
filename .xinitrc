@@ -98,6 +98,7 @@ case $HOSTNAME in
 		#vino-server --sm-disable
 		dropbox start -i
 		xmodmap .xmodmaprc
+		test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
 		exec $DE
 		;;
 	ibex)
@@ -109,6 +110,7 @@ case $HOSTNAME in
 		syndaemon -i .5 -t -d
 		synclient VertEdgeScroll=0 VertTwoFingerScroll=1 HorizTwoFingerScroll=1 ClickFinger1=1 ClickFinger2=3 ClickFinger3=3 TapButton1=1 TapButton2=2 TapButton3=3
 		xmodmap .xmodmaprc
+		test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
 		#feh --bg-center Desktop/sunset_bg.jpg
 		dropbox start -i
 		exec $DE
