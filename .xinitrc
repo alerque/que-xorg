@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x
+
 # For some reason SLIM isn't picking up this stuff before executing, so make sure we have a sane environment off the block
 source /etc/profile
 
@@ -31,6 +33,9 @@ myxsets() {
 # SLIM calls this script with an argument of the DE chosen at
 # the login prompt instead of using xsession files
 case $1 in
+	gnome)
+		DE=gnome-session
+		;;
 	awesome|gnome-session|twm)
 		DE=$1
 		;;
@@ -67,20 +72,23 @@ case $HOSTNAME in
 			gnome-session)
 				exec $DE
 				;;
+			twm)
+				myxsets
+				exec $DE
+				;;
 			*)
 				myxsets
-				export SSH_ASKPASS="/usr/lib64/openssh/ssh/ssh-askpass"
+				test -d /usr/lib64 && export SSH_ASKPASS="/usr/lib64/openssh/ssh/ssh-askpass" || export SSH_ASKPASS="/usr/lib/openssh/ssh/ssh-askpass"
 				eval $(ssh-agent -s)
-				{
 				eval $(gnome-keyring-daemon)
-				/usr/lib64/gnome-settings-daemon E_SettingsDaemon &
+				{
+				test -d /usr/lib/64 && /usr/lib64/gnome-settings-daemon E_SettingsDaemon || /usr/lib/gnome-settings-daemon E_SettingsDaemon &
 				pulseaudio -D
-				dropbox start
-				parcellite &
+				which dropboxd && dropboxd &
+				which owncloud && owncloud &
+				which parcellite && parcellite &
 				~/bin/set_background_worldlight.zsh &
-				ssh-add ~/.ssh/id_rsa
-				ssh-add ~/.ssh/github
-				ssh-add ~/.ssh/pld
+				ssh-add ~/.ssh/id_rsa && ssh-add ~/.ssh/github && ssh-add ~/.ssh/pld &
 				} &
 				exec $DE
 				eval $(ssh-agent -k)
