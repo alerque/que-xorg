@@ -67,7 +67,7 @@ case $HOSTNAME in
 		eval $(ssh-agent -k)
 		;;
 	lemur|pars)
-		hostis pars && xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output VGA-1 --mode 1680x1050 --pos 1920x0 --rotate right
+		# hostis pars && xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output VGA-1 --mode 1680x1050 --pos 1920x0 --rotate right
 		case $DE in
 			gnome-session)
 				exec $DE
@@ -82,13 +82,15 @@ case $HOSTNAME in
 				eval $(ssh-agent -s)
 				eval $(gnome-keyring-daemon)
 				{
+				test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
 				test -d /usr/lib/64 && /usr/lib64/gnome-settings-daemon E_SettingsDaemon || /usr/lib/gnome-settings-daemon E_SettingsDaemon &
+				ssh-add ~/.ssh/id_rsa && ssh-add ~/.ssh/github && ssh-add ~/.ssh/pld &
 				pulseaudio -D
-				which dropboxd && dropboxd &
-				which owncloud && owncloud &
+				sleep 5
 				which parcellite && parcellite &
 				~/bin/set_background_worldlight.zsh &
-				ssh-add ~/.ssh/id_rsa && ssh-add ~/.ssh/github && ssh-add ~/.ssh/pld &
+				which dropboxd && dropboxd &
+				which owncloud && owncloud &
 				} &
 				exec $DE
 				eval $(ssh-agent -k)
