@@ -1,10 +1,13 @@
 *
+!/.Xdefaults
 !/.config
 !/.config/parcellite
 !/.config/parcellite/parcelliterc
+!/.config/terminator
+!/.config/terminator/config
 !/.conkyrc
 !/.gitignore.d
 !/.gitignore.d/que-xorg
-!/.Xdefaults
 !/.xinitrc
 !/.xmodmaprc
+!/.xmodmaprc-pars

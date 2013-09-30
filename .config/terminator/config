@@ -1,0 +1,75 @@
+[global_config]
+  dbus = True
+  focus = mouse
+  borderless = True
+[keybindings]
+  cycle_prev = None
+  close_window = None
+  switch_to_tab_10 = None
+  move_tab_right = None
+  resize_left = None
+  broadcast_all = <Alt>b
+  reset_clear = None
+  go_right = None
+  new_tab = None
+  resize_right = None
+  resize_down = None
+  toggle_zoom = None
+  scaled_zoom = None
+  zoom_in = None
+  switch_to_tab_7 = None
+  group_all = None
+  full_screen = None
+  prev_tab = None
+  switch_to_tab_6 = None
+  group_tab = None
+  switch_to_tab_4 = None
+  switch_to_tab_5 = None
+  switch_to_tab_2 = None
+  ungroup_all = None
+  broadcast_off = <Alt>o
+  split_vert = <Alt>v
+  ungroup_tab = None
+  switch_to_tab_8 = None
+  switch_to_tab_3 = None
+  paste = None
+  cycle_next = None
+  zoom_out = None
+  switch_to_tab_1 = None
+  go_prev = None
+  close_term = None
+  new_terminator = None
+  go_next = <Alt>n
+  go_left = None
+  copy = None
+  hide_window = None
+  reset = None
+  search = None
+  go_up = None
+  resize_up = None
+  next_tab = <Alt>t
+  split_horiz = <Alt>h
+  zoom_normal = None
+  go_down = None
+  new_window = None
+  move_tab_left = None
+  switch_to_tab_9 = None
+  toggle_scrollbar = None
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    scrollback_lines = 5000
+    use_system_font = False
+    show_titlebar = False
+    font = Liberation Mono 10
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
