@@ -1,12 +1,21 @@
 #!/bin/sh
 
-{
-date
 set -x
 
 # For some reason SLIM isn't picking up this stuff before executing, so make sure we have a sane environment off the block
 source /etc/profile
 
+# Some Xorg init systems don't get this set right, and it's succesfully set differnet ways on different systems
+test -n "$HOSTNAME" || HOSTNAME=$(uname -n)
+test -n "$HOSTNAME" || HOSTNAME=$(hostname)
+
+# Convenience functions 
+hostis() {
+	test "$HOSTNAME" = "$1"
+	return $?
+}
+
+# This stuff gets set on pretty much all systems, so consolidate
 myxsets() {
 	xhost +
 
@@ -21,12 +30,12 @@ myxsets() {
 	xsetroot -cursor_name arrow
 }
 
-date >> /tmp/genx
-env >> /tmp/genx
-
 # SLIM calls this script with an argument of the DE chosen at
 # the login prompt instead of using xsession files
 case $1 in
+	gnome)
+		DE=gnome-session
+		;;
 	awesome|gnome-session|twm)
 		DE=$1
 		;;
@@ -35,7 +44,7 @@ case $1 in
 		;;
 esac
 
-case $(hostname) in
+case $HOSTNAME in
 	leylek)
 		myxsets
 		export SSH_ASKPASS="/usr/libexec/openssh/gnome-ssh-askpass"
@@ -58,24 +67,30 @@ case $(hostname) in
 		eval $(ssh-agent -k)
 		;;
 	lemur|pars)
+		# hostis pars && xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output VGA-1 --mode 1680x1050 --pos 1920x0 --rotate right
 		case $DE in
 			gnome-session)
 				exec $DE
 				;;
+			twm)
+				myxsets
+				exec $DE
+				;;
 			*)
 				myxsets
-				export SSH_ASKPASS="/usr/lib64/openssh/ssh/ssh-askpass"
+				test -d /usr/lib64 && export SSH_ASKPASS="/usr/lib64/openssh/ssh/ssh-askpass" || export SSH_ASKPASS="/usr/lib/openssh/ssh/ssh-askpass"
 				eval $(ssh-agent -s)
-				{
 				eval $(gnome-keyring-daemon)
-				/usr/lib64/gnome-settings-daemon E_SettingsDaemon &
+				{
+				test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
+				test -d /usr/lib/64 && /usr/lib64/gnome-settings-daemon E_SettingsDaemon || /usr/lib/gnome-settings-daemon E_SettingsDaemon &
+				ssh-add ~/.ssh/id_rsa && ssh-add ~/.ssh/github && ssh-add ~/.ssh/pld &
 				pulseaudio -D
-				dropbox start
-				parcellite &
+				sleep 5
+				which parcellite && parcellite &
 				~/bin/set_background_worldlight.zsh &
-				ssh-add ~/.ssh/id_rsa
-				ssh-add ~/.ssh/github
-				ssh-add ~/.ssh/pld
+				which dropboxd && dropboxd &
+				which owncloud && owncloud &
 				} &
 				exec $DE
 				eval $(ssh-agent -k)
@@ -93,6 +108,7 @@ case $(hostname) in
 		#vino-server --sm-disable
 		dropbox start -i
 		xmodmap .xmodmaprc
+		test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
 		exec $DE
 		;;
 	ibex)
@@ -104,6 +120,7 @@ case $(hostname) in
 		syndaemon -i .5 -t -d
 		synclient VertEdgeScroll=0 VertTwoFingerScroll=1 HorizTwoFingerScroll=1 ClickFinger1=1 ClickFinger2=3 ClickFinger3=3 TapButton1=1 TapButton2=2 TapButton3=3
 		xmodmap .xmodmaprc
+		test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
 		#feh --bg-center Desktop/sunset_bg.jpg
 		dropbox start -i
 		exec $DE
@@ -113,4 +130,3 @@ case $(hostname) in
 		exec $DE || exec twm
 		;;
 esac
-} 2> /tmp/slimdb
