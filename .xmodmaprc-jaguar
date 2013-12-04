@@ -1,0 +1,9 @@
+keycode 94 = Mode_switch Mode_switch
+
+keycode 41 = u U udiaeresis Udiaeresis
+keycode 42 = i I idotless Iabovedot
+keycode 39 = o O odiaeresis Odiaeresis
+keycode 38 = a A acircumflex Acircumflex
+keycode 47 = s S scedilla Scedilla
+keycode 30 = g G gbreve Gbreve
+keycode 31 = c C ccedilla Ccedilla
