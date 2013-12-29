@@ -1,4 +1,5 @@
 keycode 94 = Mode_switch Mode_switch
+keycode 66 = Mode_switch Mode_switch
 
 keycode 41 = u U udiaeresis Udiaeresis
 keycode 42 = i I idotless Iabovedot
