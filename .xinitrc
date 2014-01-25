@@ -45,28 +45,7 @@ case $1 in
 esac
 
 case $HOSTNAME in
-	leylek)
-		myxsets
-		export SSH_ASKPASS="/usr/libexec/openssh/gnome-ssh-askpass"
-		eval $(gnome-keyring-daemon)
-		eval $(ssh-agent -s)
-		{
-		/usr/libexec/gnome-settings-daemon &
-		nm-applet --sm-disable &
-		bluetooth-applet &
-		abrt-applet &
-		gnome-sound-applet &
-		~/bin/set_background_worldlight.zsh &
-		pulseaudio -D
-		dropbox start
-		} &
-		ssh-add $HOME/.ssh/id_rsa
-		ssh-add $HOME/.ssh/github
-		ssh-add $HOME/.ssh/pld
-		exec $DE
-		eval $(ssh-agent -k)
-		;;
-	lemur|pars)
+	lemur|pars|jaguar|leylek|karabatak)
 		# hostis pars && xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output VGA-1 --mode 1680x1050 --pos 1920x0 --rotate right
 		case $DE in
 			gnome-session)
@@ -78,19 +57,30 @@ case $HOSTNAME in
 				;;
 			*)
 				myxsets
-				test -d /usr/lib64 && export SSH_ASKPASS="/usr/lib64/openssh/ssh/ssh-askpass" || export SSH_ASKPASS="/usr/lib/openssh/ssh/ssh-askpass"
+				test -f /usr/libexec/openssh/gnome-ssh-askpass && export SSH_ASKPASS="/usr/libexec/openssh/gnome-ssh-askpass"
+				test -f /usr/lib64/openssh/ssh/ssh-askpass && export SSH_ASKPASS="/usr/lib64/openssh/ssh/ssh-askpass"
+				test -f /usr/lib/openssh/ssh/ssh-askpass && export SSH_ASKPASS="/usr/lib/openssh/ssh/ssh-askpass"
+				test -f /usr/lib/ssh/ssh-askpass && export SSH_ASKPASS="/usr/lib/ssh/ssh-askpass"
+				test -f /usr/lib/ssh/x11-ssh-askpass && export SSH_ASKPASS="/usr/lib/ssh/x11-ssh-askpass"
 				eval $(ssh-agent -s)
 				eval $(gnome-keyring-daemon)
 				{
 				test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
-				test -d /usr/lib/64 && /usr/lib64/gnome-settings-daemon E_SettingsDaemon || /usr/lib/gnome-settings-daemon E_SettingsDaemon &
+				test -f /usr/libexec/gnome-settings-daemon && /usr/libexec/gnome-settings-daemon &
+				test -f /usr/lib64/gnome-settings-daemon && /usr/lib64/gnome-settings-daemon E_SettingsDaemon &
+				test -f /usr/lib/gnome-settings-daemon && /usr/lib/gnome-settings-daemon E_SettingsDaemon &
+				test -f /usr/lib/gnome-settings-daemon/gnome-settings-daemon && /usr/lib/gnome-settings-daemon/gnome-settings-daemon E_SettingsDaemon &
 				ssh-add ~/.ssh/id_rsa && ssh-add ~/.ssh/github && ssh-add ~/.ssh/pld &
-				pulseaudio -D
 				sleep 5
+				which pulseaudio && pulseaudio -D
+				which nm-applet && nm-applet --sm-disable &
+				which bluetooth-applet && bluetooth-applet &
+				which abrt-applet && abrt-applet &
+				which gnome-sound-applet && gnome-sound-applet &
 				which parcellite && parcellite &
-				~/bin/set_background_worldlight.zsh &
 				which dropboxd && dropboxd &
 				which owncloud && owncloud &
+				~/bin/set_background_worldlight.zsh &
 				} &
 				exec $DE
 				eval $(ssh-agent -k)
