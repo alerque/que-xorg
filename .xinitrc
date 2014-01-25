@@ -65,6 +65,7 @@ case $HOSTNAME in
 				eval $(ssh-agent -s)
 				eval $(gnome-keyring-daemon)
 				{
+				xmodmap .Xmodmap
 				test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
 				test -f /usr/libexec/gnome-settings-daemon && /usr/libexec/gnome-settings-daemon &
 				test -f /usr/lib64/gnome-settings-daemon && /usr/lib64/gnome-settings-daemon E_SettingsDaemon &
