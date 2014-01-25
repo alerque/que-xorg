@@ -111,20 +111,6 @@ case $HOSTNAME in
 		test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
 		exec $DE
 		;;
-	ibex)
-		/usr/lib/gnome-settings-daemon E_SettingsDaemon &
-		gnome-keyring-daemon -s -d -c pkcs11,secrets,ssh
-		nm-applet -sm-disable &
-		bluetooth-applet &
-		pactl load-module module-alsa-sink device=bluetooth
-		syndaemon -i .5 -t -d
-		synclient VertEdgeScroll=0 VertTwoFingerScroll=1 HorizTwoFingerScroll=1 ClickFinger1=1 ClickFinger2=3 ClickFinger3=3 TapButton1=1 TapButton2=2 TapButton3=3
-		xmodmap .xmodmaprc
-		test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
-		#feh --bg-center Desktop/sunset_bg.jpg
-		dropbox start -i
-		exec $DE
-		;;
 	*)
 		myxsets
 		exec $DE || exec twm
