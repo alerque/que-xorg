@@ -5,6 +5,7 @@
 !/.config/terminator
 !/.config/terminator/config
 !/.conkyrc
+!/.evrouterrc
 !/.gitignore.d
 !/.gitignore.d/que-xorg
 !/.Xdefaults
