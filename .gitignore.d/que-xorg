@@ -8,6 +8,7 @@
 !/.evrouterrc
 !/.gitignore.d
 !/.gitignore.d/que-xorg
+!/.synergy.conf
 !/.Xdefaults
 !/.xinitrc
 !/.Xmodmap
