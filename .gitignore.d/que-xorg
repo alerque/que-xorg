@@ -1,4 +1,6 @@
 *
+!/.Xdefaults
+!/.Xmodmap
 !/.config
 !/.config/parcellite
 !/.config/parcellite/parcelliterc
@@ -9,9 +11,8 @@
 !/.gitignore.d
 !/.gitignore.d/que-xorg
 !/.synergy.conf
-!/.Xdefaults
 !/.xinitrc
-!/.Xmodmap
 !/.xmodmaprc
 !/.xmodmaprc-jaguar
 !/.xmodmaprc-pars
+!/.xprofile

@@ -42,6 +42,7 @@ case $HOSTNAME in
 				which parcellite && parcellit
 				which dropboxd && dropboxd &
 				which owncloud && owncloud &
+                which batti && batti &
 				~/bin/set_background_worldlight.zsh &
 			;;
 		esac
