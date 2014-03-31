@@ -1,16 +1,21 @@
 #!/bin/sh
 
-# For some reason SLIM isn't picking up this stuff before executing, so make sure we have a sane environment off the block
-source /etc/profile
+exec 2>&1 > /tmp/xprofile
+set -x
 
 # Some Xorg init systems don't get this set right, and it's succesfully set differnet ways on different systems
 test -n "$HOSTNAME" || HOSTNAME=$(uname -n)
 test -n "$HOSTNAME" || HOSTNAME=$(hostname)
+HOSTNAME=${HOSTNAME/%.*/}
 
-# Convenience functions 
+# Convenience functions
 hostis() {
 	test "$HOSTNAME" = "$1"
 	return $?
+}
+
+runifhas() {
+    hash $1 && $@ &
 }
 
 # This stuff gets set on pretty much all systems, so consolidate
@@ -30,21 +35,22 @@ myxsets() {
 
 which evrouter && find /dev/input/by-id -name '*Griffin*' -exec evrouter {} \;
 
+echo host $HOSTNAME
+
 case $HOSTNAME in
 	lemur|jaguar|leylek|karabatak)
-		# hostis pars && xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output VGA-1 --mode 1680x1050 --pos 1920x0 --rotate right
         case $DESKTOP_SESSION in
 			awesome)
                 myxsets
-                eval $(keychain --eval -Q --quiet ~/.ssh/id_rsa ~/.ssh/github)
-				which pulseaudio && pulseaudio -D
-				which nm-applet && nm-applet --sm-disable &
-				which bluetooth-applet && bluetooth-applet &
-                which pa-applet && pa-applet &
-				which parcellite && parcellite &
-				which dropboxd && dropboxd &
-				which owncloud && owncloud &
-                which batti && batti &
+                #eval $(keychain --eval -Q --quiet ~/.ssh/id_rsa ~/.ssh/github)
+				runifhas pulseaudio -D
+				runifhas nm-applet --sm-disable
+				runifhas bluetooth-applet
+                runifhas pa-applet
+				runifhas parcellite
+				runifhas dropboxd
+				runifhas owncloud
+                runifhas batti
 				~/bin/set_background_worldlight.zsh &
 			;;
 		esac
