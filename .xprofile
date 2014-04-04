@@ -33,6 +33,7 @@ myxsets() {
 	xsetroot -cursor_name arrow
 }
 
+killall evrouter
 which evrouter && find /dev/input/by-id -name '*Griffin*' -exec evrouter {} \;
 
 echo host $HOSTNAME
@@ -47,6 +48,7 @@ case $HOSTNAME in
 				runifhas nm-applet --sm-disable
 				runifhas bluetooth-applet
                 runifhas pa-applet
+                runifhas pasystray
 				runifhas parcellite
 				runifhas dropboxd
 				runifhas owncloud
