@@ -65,8 +65,6 @@ case $HOSTNAME in
 				eval $(ssh-agent -s)
 				eval $(gnome-keyring-daemon)
 				{
-				xmodmap .Xmodmap
-				test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
 				test -f /usr/libexec/gnome-settings-daemon && /usr/libexec/gnome-settings-daemon &
 				test -f /usr/lib64/gnome-settings-daemon && /usr/lib64/gnome-settings-daemon E_SettingsDaemon &
 				test -f /usr/lib/gnome-settings-daemon && /usr/lib/gnome-settings-daemon E_SettingsDaemon &
@@ -98,8 +96,6 @@ case $HOSTNAME in
 		nm-applet --sm-disable &
 		#vino-server --sm-disable
 		dropbox start -i
-		xmodmap .xmodmaprc
-		test -f .xmodmaprc-$HOSTNAME && xmodmap .xmodmaprc-$HOSTNAME
 		exec $DE
 		;;
 	*)
