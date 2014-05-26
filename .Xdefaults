@@ -6,8 +6,6 @@ Xft.lcdfilter:  lcddefault
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
-!Rxvt*termName: rxvt
-
 URxvt*scrollBar_right: false
 URxvt*scrollBar: false
 URxvt*borderLess: false
@@ -16,6 +14,7 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: false
 URxvt*scrollTtyKeypress: true
 URxvt*internalBorder: 2
+URxvt*lineSpace: 2
 
 !Requires urxvt-font-size-git
 URxvt.perl-ext-common: ...,font-size
