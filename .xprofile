@@ -53,6 +53,7 @@ case $DESKTOP_SESSION in
         runifhas dropboxd
         runifhas owncloud
         runifhas batti
+        runifhas compton --config ~/.config/compton.conf
         ~/bin/set_background_worldlight.zsh &
     ;;
 esac
