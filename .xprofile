@@ -51,7 +51,6 @@ case $DESKTOP_SESSION in
         runifhas pa-applet
         runifhas pasystray
         runifhas parcellite
-        runifhas dropboxd
         runifhas owncloud
         runifhas batti
         runifhas compton --config ~/.config/compton.conf
