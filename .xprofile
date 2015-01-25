@@ -34,10 +34,20 @@ case $HOSTNAME in
 	lemur)
         xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output DVI-I-2 --mode 1680x1050 --pos 1920x0 --rotate right
         hash evrouter && find /dev/input/by-id -name '*Griffin*' -exec evrouter {} \;
+
+        # Increase touch gesture scroll sensitivity
+        xsetwacom --set 9 ScrollDistance 20
 		;;
     jaguar)
         killall evrouter
         hash evrouter && find /dev/input/by-id -name '*Griffin*' -exec evrouter {} \;
+
+        # Map pen to just secondary display
+        xsetwacom --set 8 MapToOutput HDMI-2
+        xsetwacom --set 16 MapToOutput HDMI-2
+
+        # Increase touch gesture scroll sensitivity
+        xsetwacom --set 9 ScrollDistance 20
         ;;
 esac
 
