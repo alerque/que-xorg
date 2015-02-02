@@ -37,19 +37,23 @@ case $HOSTNAME in
         killall evrouter
         hash evrouter && find /dev/input/by-id -name '*Griffin*' -exec evrouter {} \;
 
+        # Map pen to just one monitor
+        xsetwacom --set "Wacom Intuos PT S Pen stylus" MapToOutput DVI-I-2
+        xsetwacom --set "Wacom Intuos PT S Pen eraser" MapToOutput DVI-I-2
+
         # Increase touch gesture scroll sensitivity
-        xsetwacom --set 9 ScrollDistance 20
+        xsetwacom --set "Wacom Intuos PT S Finger touch" ScrollDistance 20
 		;;
     jaguar)
         killall evrouter
         hash evrouter && find /dev/input/by-id -name '*Griffin*' -exec evrouter {} \;
 
-        # Map pen to just secondary display
-        xsetwacom --set 8 MapToOutput HDMI-2
-        xsetwacom --set 16 MapToOutput HDMI-2
+        # Map pen to just one monitor
+        xsetwacom --set "Wacom Intuos PT S Pen stylus" MapToOutput HDMI-2
+        xsetwacom --set "Wacom Intuos PT S Pen eraser" MapToOutput HDMI-2
 
         # Increase touch gesture scroll sensitivity
-        xsetwacom --set 9 ScrollDistance 20
+        xsetwacom --set "Wacom Intuos PT S Finger touch" ScrollDistance 20
         ;;
 esac
 
