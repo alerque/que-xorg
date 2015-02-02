@@ -32,7 +32,9 @@ myxsets() {
 
 case $HOSTNAME in
 	lemur)
-        xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output DVI-I-2 --mode 1680x1050 --pos 1920x0 --rotate right
+        #xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output DVI-I-2 --mode 1680x1050 --pos 1920x0 --rotate right
+        #xrandr --output DVI-I-1 --auto --output DVI-I-2 --auto --right-of DVI-I-1
+        killall evrouter
         hash evrouter && find /dev/input/by-id -name '*Griffin*' -exec evrouter {} \;
 
         # Increase touch gesture scroll sensitivity

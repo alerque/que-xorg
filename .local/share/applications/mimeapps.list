@@ -2,7 +2,6 @@
 application/pdf=evince.desktop
 application/x-bzpdf=evince.desktop
 application/x-gzpdf=evince.desktop
-
 application/mxf=smplayer.desktop
 application/ogg=smplayer.desktop
 application/ram=smplayer.desktop
@@ -111,3 +110,4 @@ video/x-theora+ogg=smplayer.desktop
 x-content/video-dvd=smplayer.desktop
 x-content/video-vcd=smplayer.desktop
 x-content/video-svcd=smplayer.desktop
+application/octet-stream=gedit.desktop;
