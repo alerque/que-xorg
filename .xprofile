@@ -30,6 +30,14 @@ myxsets() {
 	xsetroot -cursor_name arrow
 }
 
+setkbd() {
+	setxkbmap $1
+	setxkbmap -option
+	setxkbmap -option nbsp:zwnj2nb3nnb4
+	setxkbmap -option compose:menu
+	setxkbmap -option lv3:caps_switch
+}
+
 case $HOSTNAME in
 	lemur)
         #xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output DVI-I-2 --mode 1680x1050 --pos 1920x0 --rotate right
@@ -60,6 +68,7 @@ esac
 case $DESKTOP_SESSION in
     awesome)
         myxsets
+        setkbd dvp
         eval $(keychain --eval -Q --quiet ~/.ssh/id_rsa ~/.ssh/github)
         runifhas pulseaudio -D
         runifhas nm-applet --sm-disable
