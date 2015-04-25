@@ -77,7 +77,7 @@ case $DESKTOP_SESSION in
         runifhas pasystray
         runifhas parcellite
         runifhas owncloud
-        runifhas batti
+        runifhas cbatticon
         runifhas compton --config ~/.config/compton.conf
         runifhas xautolock -time 5 -locker slock
         ~/bin/set_background_worldlight.zsh &
