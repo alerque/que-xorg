@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Monospace 9
+font = Liberation Mono for Powerline 8
 scrollback_lines = 1000
 search_wrap = true
 #icon_name = terminal
@@ -30,32 +30,33 @@ cursor_shape = block
 
 [colors]
 #cursor = #dcdccc
-foreground = #dcdccc
+foreground = #bfbdc0
 foreground_bold = #ffffff
-background = #3f3f3f
+background = #000000
 
 # 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
+#background = rgba(0, 0, 0, 0.5)
 
 # if unset, will reverse foreground and background
 highlight = #2f2f2f
 
 # colors from color0 to color254 can be set
-color0 = #3f3f3f
-color1 = #705050
-color2 = #60b48a
-color3 = #dfaf8f
-color4 = #506070
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #dcdccc
-color8 = #709080
-color9 = #dca3a3
-color10 = #c3bf9f
-color11 = #f0dfaf
-color12 = #94bff3
-color13 = #ec93d3
-color14 = #93e0e3
+color0 = #000000
+color1 = #8a110e
+color2 = #669f3d
+color3 = #b3751e
+color4 = #493d9f
+color5 = #9216a3
+color6 = #198a9c
+color7 = #bfbdc0
+
+color8 = #686773
+color9 = #fc5166
+color10 = #63ff54
+color11 = #ffd75c
+color12 = #766eff
+color13 = #e151ff
+color14 = #57ffec
 color15 = #ffffff
 
 [hints]
