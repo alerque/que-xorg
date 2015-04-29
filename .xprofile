@@ -53,6 +53,7 @@ case $HOSTNAME in
         xsetwacom --set "Wacom Intuos PT S Finger touch" ScrollDistance 20
 		;;
     jaguar)
+        xrandr --output HDMI-1 --auto --output HDMI-2 --auto --right-of HDMI-1
         killall evrouter
         hash evrouter && find /dev/input/by-id -name '*Griffin*' -exec evrouter {} \;
 
