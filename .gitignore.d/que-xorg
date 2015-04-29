@@ -46,6 +46,8 @@
 !/.config/powerline/themes/wm/default.json
 !/.config/terminator
 !/.config/terminator/config
+!/.config/termite
+!/.config/termite/config
 !/.conkyrc
 !/.evrouterrc
 !/.gitignore.d
