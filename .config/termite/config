@@ -29,35 +29,32 @@ cursor_shape = block
 #modify_other_keys = false
 
 [colors]
-#cursor = #dcdccc
-foreground = #bfbdc0
-foreground_bold = #ffffff
-background = #000000
-
-# 20% background transparency (requires a compositor)
-#background = rgba(0, 0, 0, 0.5)
+foreground = #839496
+foreground_bold = #eee8d5
+#foreground_dim = #888888
+background = #002b36
+cursor = #93a1a1
 
 # if unset, will reverse foreground and background
-highlight = #2f2f2f
+#highlight = #839496
 
 # colors from color0 to color254 can be set
-color0 = #000000
-color1 = #8a110e
-color2 = #669f3d
-color3 = #b3751e
-color4 = #493d9f
-color5 = #9216a3
-color6 = #198a9c
-color7 = #bfbdc0
-
-color8 = #686773
-color9 = #fc5166
-color10 = #63ff54
-color11 = #ffd75c
-color12 = #766eff
-color13 = #e151ff
-color14 = #57ffec
-color15 = #ffffff
+color0 = #073642
+color1 = #dc322f
+color2 = #859900
+color3 = #b58900
+color4 = #268bd2
+color5 = #d33682
+color6 = #2aa198
+color7 = #eee8d5
+color8 = #002b36
+color9 = #cb4b16
+color10 = #586e75
+color11 = #657b83
+color12 = #839496
+color13 = #6c71c4
+color14 = #93a1a1
+color15 = #fdf6e3
 
 [hints]
 #font = Monospace 12
