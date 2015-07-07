@@ -79,6 +79,7 @@ case $DESKTOP_SESSION in
         runifhas pulseaudio -D
         runifhas nm-applet --sm-disable
         runifhas bluetooth-applet
+        runifhas blueman-applet
         runifhas pa-applet
         runifhas pasystray
         runifhas parcellite
