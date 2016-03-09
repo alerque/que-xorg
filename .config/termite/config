@@ -8,7 +8,6 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-;font = Liberation Mono for Powerline 9
 font = Hack 10
 scrollback_lines = 10000
 search_wrap = true
