@@ -111,3 +111,6 @@ x-content/video-dvd=smplayer.desktop
 x-content/video-vcd=smplayer.desktop
 x-content/video-svcd=smplayer.desktop
 application/octet-stream=gedit.desktop;
+
+[Default Applications]
+x-scheme-handler/tg=telegramdesktop.desktop
