@@ -76,7 +76,7 @@ case $DESKTOP_SESSION in
     awesome)
         myxsets
         setkbd dvp
-        eval $(keychain --agents ssh,gpg --eval -Q --quiet ~/.ssh/id_rsa ~/.ssh/github ~/.ssh/aur 75267693)
+        eval $(keychain --agents ssh,gpg --eval -Q --quiet ~/.ssh/id_rsa ~/.ssh/github ~/.ssh/aur 75267693 B89B1E86)
         runifhas pulseaudio -D
         runifhas nm-applet --sm-disable
         runifhas bluetooth-applet
