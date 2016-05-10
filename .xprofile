@@ -91,13 +91,13 @@ case $DESKTOP_SESSION in
         runifhas nm-applet --sm-disable
         runifhas bluetooth-applet
         runifhas blueman-applet
-        runifhas pa-applet
-        runifhas pasystray
+        runifhas pa-applet || runifhas pasystray
         runifhas parcellite
         runifhas owncloud
         runifhas cbatticon
         runifhas compton --config ~/.config/compton.conf
         runifhas xautolock -time 6 -locker "echo 'mykbdcfg.switch_dvp()' | awesome-client; slock" -notify 30
+        runifhas xss-lock slock &
         ~/bin/set_background_worldlight.zsh &
     ;;
 esac
