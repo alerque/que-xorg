@@ -12,6 +12,9 @@ HOSTNAME=${HOSTNAME/%.*/}
 export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
 
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.8
+
 # Convenience functions
 hostis() {
 	test "$HOSTNAME" = "$1"

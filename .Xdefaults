@@ -1,5 +1,4 @@
 *ScrollbarPlacement: left
-Xft.dpi:        96
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.lcdfilter:  lcddefault
