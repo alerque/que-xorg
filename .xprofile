@@ -73,6 +73,13 @@ case $HOSTNAME in
         xsetwacom --set "Wacom Intuos PT S Finger touch" Mode absolute
         xsetwacom --set "Wacom Intuos PT S Finger touch" Area 0 2048 4096 4096
         ;;
+    emircik)
+        :
+        # Tap to click
+        xinput set-prop 12 282 1
+        # Natural scroll
+        xinput set-prop 12 290 1
+        ;;
 esac
 
 case $DESKTOP_SESSION in
