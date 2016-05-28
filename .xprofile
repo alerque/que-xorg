@@ -8,12 +8,15 @@ test -n "$HOSTNAME" || HOSTNAME=$(uname -n)
 test -n "$HOSTNAME" || HOSTNAME=$(hostname)
 HOSTNAME=${HOSTNAME/%.*/}
 
-#export XMODIFIERS=@im=uim
 export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
 
-export GDK_SCALE=2
-export GDK_DPI_SCALE=0.8
+# Setup HIDPI support
+export DPI=$(xdypinfo | grep resolution | awn -F'[x ]*' '{print $3}')
+if [[ $DPI -ge 156 ]]; then
+    export GDK_SCALE=2
+    export GDK_DPI_SCALE=0.8
+fi
 
 # Convenience functions
 hostis() {
