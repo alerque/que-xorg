@@ -98,7 +98,7 @@ case $DESKTOP_SESSION in
         runifhas bluetooth-applet
         runifhas blueman-applet
         runifhas pa-applet || runifhas pasystray
-        runifhas parcellite
+        runifhas gpaste-client applet || runifhas parcellite
         runifhas owncloud
         runifhas cbatticon
         runifhas synergy
