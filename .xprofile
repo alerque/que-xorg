@@ -12,7 +12,7 @@ export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
 
 # Setup HIDPI support
-export DPI=$(xdypinfo | grep resolution | awn -F'[x ]*' '{print $3}')
+export DPI=$(xdpyinfo | grep resolution | awk -F'[x ]*' '{print $3}')
 if [[ $DPI -ge 156 ]]; then
     export GDK_SCALE=2
     export GDK_DPI_SCALE=0.8
