@@ -8,8 +8,13 @@ test -n "$HOSTNAME" || HOSTNAME=$(uname -n)
 test -n "$HOSTNAME" || HOSTNAME=$(hostname)
 HOSTNAME=${HOSTNAME/%.*/}
 
-export GTK_IM_MODULE=xim
-export QT_IM_MODULE=xim
+export GTK_IM_MODULE=uim
+export QT_IM_MODULE=uim
+export XMODIFIERS='@im=uim'
+export LIBUIM_ENABLE_EMERGENCY_KEY=1
+uim-xim &
+uim-toolbar-gtk3-systray &
+
 
 # Setup HIDPI support
 export DPI=$(xdpyinfo | grep resolution | awk -F'[x ]*' '{print $3}')
