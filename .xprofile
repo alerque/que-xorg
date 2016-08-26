@@ -39,7 +39,7 @@ myxsets() {
 	xset dpms $((5*60+45)) 0 $((10*60))
 	xset s off
 	xset s noblank
-	xset s 0
+	xset s 60 30
 	xset b off
 	xset r rate 250 50
 	xsetroot -solid black
@@ -110,7 +110,7 @@ case $DESKTOP_SESSION in
         runifhas shutter --min_at_startup
         runifhas compton --config ~/.config/compton.conf
         runifhas xautolock -time 6 -locker "echo 'mykbdcfg.switch_dvp()' | awesome-client; slock" -notify 30
-        runifhas xss-lock slock &
+        runifhas xss-lock -n ~/bin/pre_lock.zsh -- slock &
         ~/bin/set_background_worldlight.zsh &
     ;;
 esac
