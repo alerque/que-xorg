@@ -3,3 +3,6 @@ include "%L"   # import the default Compose file for your locale
 <Multi_key> <=> <T>     : "₺" U20BA
 <Multi_key> <x> <+>     : "✔" U2714
 <Multi_key> <x> <->     : "✗" U2717
+<Multi_key> <*> <*>     : "•" U2022
+<Multi_key> <=> <->     : "☰" U2630
+<Multi_key> <:> <:>     : "⋮" U22EE
