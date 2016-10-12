@@ -36,10 +36,10 @@ runifhas() {
 myxsets() {
 	xhost +
 	xset +dpms
-	xset dpms $((5*60+45)) 0 $((10*60))
+	xset dpms $((10*60)) 0 $((10*60))
 	xset s off
 	xset s noblank
-	xset s 60 30
+	xset s $((3*60)) $((2*60))
 	xset b off
 	xset r rate 250 50
 	xsetroot -solid black
