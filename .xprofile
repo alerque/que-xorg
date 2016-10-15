@@ -89,7 +89,7 @@ case $HOSTNAME in
         # Tap to click
         xinput set-prop 12 282 1
         # Natural scroll
-        xinput set-prop 12 290 1
+        xinput set-prop 12 292 1
         ;;
 esac
 
