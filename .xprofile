@@ -3,7 +3,8 @@
 #exec 2>&1 > /tmp/xprofile
 #set -x
 
-# Some Xorg init systems don't get this set right, and it's succesfully set differnet ways on different systems
+# Some Xorg init systems don't get the hostname variable set righ in their own
+# and fixing it varies from system to system.
 test -n "$HOSTNAME" || HOSTNAME=$(uname -n)
 test -n "$HOSTNAME" || HOSTNAME=$(hostname)
 HOSTNAME=${HOSTNAME/%.*/}
@@ -15,7 +16,7 @@ export LIBUIM_ENABLE_EMERGENCY_KEY=1
 uim-xim &
 uim-toolbar-gtk3-systray &
 
-# Setup HIDPI support
+# Setup HiDPI support
 export DPI=$(xdpyinfo | grep resolution | awk -F'[x ]*' '{print $3}')
 if [[ $DPI -ge 156 ]]; then
     export GDK_SCALE=2
@@ -79,12 +80,11 @@ case $HOSTNAME in
         # Increase touch gesture scroll sensitivity
         xsetwacom --set "Wacom Intuos PT S Finger touch" ScrollDistance 20
 
-        # Setup absolute mode and screen area
+        # Setup touch mode to absolute and map to screen area
         xsetwacom --set "Wacom Intuos PT S Finger touch" Mode absolute
         xsetwacom --set "Wacom Intuos PT S Finger touch" Area 0 2048 4096 4096
         ;;
     emircik)
-        :
         # Tap to click
         xinput set-prop 12 282 1
         # Natural scroll
@@ -99,8 +99,7 @@ case $DESKTOP_SESSION in
         eval $(keychain --agents ssh,gpg --eval -Q --quiet id_rsa github aur 75267693 B89B1E86)
         runifhas pulseaudio -D
         runifhas nm-applet --sm-disable
-        runifhas bluetooth-applet
-        runifhas blueman-applet
+        runifhas blueman-applet || runifhas bluetooth-applet
         runifhas pa-applet || runifhas pasystray
         runifhas gpaste-client applet || runifhas parcellite
         runifhas owncloud
