@@ -73,8 +73,8 @@ case $HOSTNAME in
         hash evrouter && evrouter /dev/input/event*
 
         # Map pen to just one monitor
-        xsetwacom --set "Wacom Intuos PT S Pen stylus" MapToOutput HDMI-2
-        xsetwacom --set "Wacom Intuos PT S Pen eraser" MapToOutput HDMI-2
+        xsetwacom --set "Wacom Intuos PT S Pen stylus" MapToOutput HEAD-1
+        xsetwacom --set "Wacom Intuos PT S Pen eraser" MapToOutput HEAD-1
 
         # Increase touch gesture scroll sensitivity
         xsetwacom --set "Wacom Intuos PT S Finger touch" ScrollDistance 20
