@@ -85,10 +85,11 @@ case $HOSTNAME in
         xsetwacom --set "Wacom Intuos PT S Finger touch" Area 0 2048 4096 4096
         ;;
     emircik)
+        tpid=$(xinput list --id-only 'DLL0704:01 06CB:76AE Touchpad')
         # Tap to click
-        xinput set-prop 12 282 1
+        xinput set-prop $tpid 282 1
         # Natural scroll
-        xinput set-prop 12 292 1
+        xinput set-prop $tpid 292 1
         ;;
 esac
 
