@@ -106,7 +106,7 @@ case $DESKTOP_SESSION in
         runifhas blueman-applet || runifhas bluetooth-applet
         runifhas pa-applet || runifhas pasystray
         runifhas gpaste-client applet || runifhas parcellite
-        runifhas owncloud
+        runifhas nextcloud || runifhas owncloud
         runifhas cbatticon
         runifhas synergy
         runifhas shutter --min_at_startup
