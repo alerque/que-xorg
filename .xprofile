@@ -88,6 +88,7 @@ case $HOSTNAME in
         tpid=$(xinput list --id-only 'DLL0704:01 06CB:76AE Touchpad')
         # Tap to click
         # xinput set-prop $tpid 282 1
+        xinput set-prop $tpid 281 1
         xinput set-prop $tpid 299 1
         # Natural scroll
         xinput set-prop $tpid 292 1
