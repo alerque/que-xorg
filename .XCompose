@@ -6,3 +6,6 @@ include "%L"   # import the default Compose file for your locale
 <Multi_key> <*> <*>     : "•" U2022
 <Multi_key> <=> <->     : "☰" U2630
 <Multi_key> <:> <:>     : "⋮" U22EE
+<Multi_key> <=> <~>     : "≅" U2245
+<Multi_key> <~> <~>     : "≈" U2248
+
