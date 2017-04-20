@@ -107,7 +107,6 @@ case $DESKTOP_SESSION in
         runifhas synergy
         runifhas shutter --min_at_startup
         runifhas compton --config ~/.config/compton.conf
-        runifhas xautolock -time 6 -locker "echo 'mykbdcfg.switch_dvp()' | awesome-client; slock" -notify 30
         runifhas xss-lock -n ~/bin/pre_lock.zsh -- slock &
     ;;
 esac
