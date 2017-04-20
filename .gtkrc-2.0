@@ -1,8 +1,8 @@
-gtk-theme-name = "Dorian-theme-3.14"
+# Auto-written by gtk2_prefs. Do not edit.
 
-style "vimfix" {
-  bg[NORMAL] = "#000000"
+gtk-theme-name = "Adwaita-dark-gtk2"
+style "user-font"
+{
+	font_name="Cantarell 11"
 }
-widget "vim-main-window.*GtkForm" style "vimfix"
-
-gtk-theme-name = "DeLorean-Dark-3.14"
+widget_class "*" style "user-font"
