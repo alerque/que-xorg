@@ -57,6 +57,7 @@
 !/.local/share
 !/.local/share/applications
 !/.local/share/applications/mimeapps.list
+!/.pqivrc
 !/.synergy.conf
 !/.Xdefaults
 !/.xinitrc

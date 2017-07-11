@@ -1,0 +1,5 @@
+[options]
+hide-info-box = 1
+zoom-level = 2
+scale-images-up = 1
+watch-files = changes-only
