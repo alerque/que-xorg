@@ -90,8 +90,10 @@ case $HOSTNAME in
         # xinput set-prop $tpid 282 1
         xinput set-prop $tpid 283 1
         xinput set-prop $tpid 299 1
+        xinput set-prop $tpid 301 1
         # Natural scroll
         xinput set-prop $tpid 292 1
+        xinput set-prop $tpid 279 1
         set +x
         ;;
 esac
