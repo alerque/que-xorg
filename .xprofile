@@ -86,8 +86,8 @@ case $HOSTNAME in
         ;;
     emircik)
         tpid=$(xinput list --id-only 'DLL0704:01 06CB:76AE Touchpad')
-        getprop() { xinput list-props $tpid | sed -ne "/libinput $1 Enabled (/{s/^.*(//;s/).*\$//;p}" }
-        xinput set-prop $tpid $(getprop Tapping ) 1
+        getprop() { xinput list-props $tpid | sed -ne "/libinput $@ Enabled (/{s/^.*(//;s/).*\$//;p}" }
+        xinput set-prop $tpid $(getprop Tapping) 1
         xinput set-prop $tpid $(getprop Natural Scrolling) 1
         ;;
 esac
