@@ -107,7 +107,7 @@ case $DESKTOP_SESSION in
         runifhas nextcloud || runifhas owncloud
         runifhas cbatticon
         runifhas synergy
-        runifhas shutter --min_at_startup
+        runifhas flameshot || runifhas shutter --min_at_startup
         runifhas compton --config ~/.config/compton.conf
         runifhas xss-lock -n ~/bin/pre_lock.zsh -- slock &
     ;;
