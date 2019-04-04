@@ -99,7 +99,6 @@ case $DESKTOP_SESSION in
         myxsets
         setkbd dvp
         eval $(~/bin/que-auth.zsh)
-        runifhas pulseaudio -D
         runifhas nm-applet --sm-disable
         runifhas blueman-applet || runifhas bluetooth-applet
         runifhas pa-applet || runifhas pasystray
