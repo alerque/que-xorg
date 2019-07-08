@@ -1,12 +1,10 @@
-include "%L"   # import the default Compose file for your locale
-<Multi_key> <t> <l>     : "₺" U20BA
-<Multi_key> <=> <T>     : "₺" U20BA
-<Multi_key> <t> <e>     : "₸" U20B8
-<Multi_key> <x> <+>     : "✔" U2714
-<Multi_key> <x> <->     : "✗" U2717
-<Multi_key> <*> <*>     : "•" U2022
-<Multi_key> <=> <->     : "☰" U2630
-<Multi_key> <:> <:>     : "⋮" U22EE
-<Multi_key> <=> <~>     : "≅" U2245
-<Multi_key> <~> <~>     : "≈" U2248
-
+include "%L" # Inherit current locale's default Compose map
+<Multi_key> <t> <l> : "₺" U20BA # TURKISH LIRA SIGN
+<Multi_key> <t> <e> : "₸" U20B8 # TENGE SIGN
+<Multi_key> <x> <+> : "✔" U2714 # HEAVY CHECK MARK
+<Multi_key> <x> <-> : "✗" U2717 # BALLOT X
+<Multi_key> <*> <*> : "•" U2022 # BULLET
+<Multi_key> <=> <-> : "☰" U2630 # TRIGRAM FOR HEAVEN
+<Multi_key> <:> <:> : "⋮" U22EE # VERTICAL ELLIPSIS
+<Multi_key> <=> <~> : "≅" U2245 # APPROXIMATELY EQUAL TO
+<Multi_key> <~> <~> : "≈" U2248 # ALMOST EQUAL TO
