@@ -1,6 +1,7 @@
 include "%L"   # import the default Compose file for your locale
 <Multi_key> <t> <l>     : "₺" U20BA
 <Multi_key> <=> <T>     : "₺" U20BA
+<Multi_key> <t> <e>     : "₸" U20B8
 <Multi_key> <x> <+>     : "✔" U2714
 <Multi_key> <x> <->     : "✗" U2717
 <Multi_key> <*> <*>     : "•" U2022
