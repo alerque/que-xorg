@@ -70,8 +70,7 @@ case $HOSTNAME in
 		;;
     jaguar)
         xrandr --output HDMI-1 --auto --output HDMI-2 --auto --right-of HDMI-1
-        evrouter -q
-        hash evrouter && evrouter /dev/input/event*
+        hash powermate && powermate -d
 
         # Map pen to just one monitor
         xsetwacom --set "Wacom Intuos PT S Pen stylus" MapToOutput HEAD-1
@@ -81,13 +80,14 @@ case $HOSTNAME in
         xsetwacom --set "Wacom Intuos PT S Finger touch" ScrollDistance 20
 
         # Setup touch mode to absolute and map to screen area
-        xsetwacom --set "Wacom Intuos PT S Finger touch" Mode absolute
-        xsetwacom --set "Wacom Intuos PT S Finger touch" Area 0 2048 4096 4096
+        xsetwacom --set "Wacom Intuos PT S Finger touch" Mode relative
+        xinput set-prop 'Wacom Intuos PT S Finger touch' 'Device Accel Velocity Scaling' 5
+        xinput set-prop 'Wacom Intuos PT S Finger touch' 'Device Accel Constant Deceleration' 2
         ;;
     emircik)
         tpid=$(xinput list --id-only 'DLL0704:01 06CB:76AE Touchpad')
         getprop() {
-            xinput list-props $tpid | sed -ne "/libinput $@ Enabled (/{s/^.*(//;s/).*\$//;p}"
+            xinput list-props $tpid | sed -ne "/libinput $1 Enabled (/{s/^.*(//;s/).*\$//;p}"
         }
         xinput set-prop $tpid $(getprop "Tapping") 1
         xinput set-prop $tpid $(getprop "Natural Scrolling") 1
@@ -102,12 +102,12 @@ case $DESKTOP_SESSION in
         runifhas nm-applet --sm-disable
         runifhas blueman-applet || runifhas bluetooth-applet
         runifhas pa-applet || runifhas pasystray
-        runifhas gpaste-client applet || runifhas parcellite
-        runifhas nextcloud || runifhas owncloud
+        runifhas gpaste-client applet
+        runifhas nextcloud
         runifhas cbatticon
         runifhas synergy
-        runifhas flameshot || runifhas shutter --min_at_startup
+        runifhas flameshot
         runifhas picom || runifhas compton --config ~/.config/compton.conf
-        runifhas xss-lock -n ~/bin/pre_lock.zsh -- slock &
+        runifhas xss-lock -n ~/bin/pre_lock.zsh -- slock
     ;;
 esac
