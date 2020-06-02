@@ -7,25 +7,3 @@ Xft.hintstyle:  hintfull
 
 *background: #000000
 *foreground: #FFFFFF
-
-URxvt*scrollBar_right: false
-URxvt*scrollBar: false
-URxvt*borderLess: false
-URxvt*saveLines: 1000000
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: false
-URxvt*scrollTtyKeypress: true
-URxvt*internalBorder: 2
-URxvt*lineSpace: 2
-
-!Requires urxvt-font-size-git
-URxvt.perl-ext-common: ...,font-size
-URxvt.keysym.M-Up:     perl:font-size:increase
-URxvt.keysym.M-Down:   perl:font-size:decrease
-URxvt.iso14755:        false
-URxvt.iso14755_52:     false
-
-URxvt*font: xft:Liberation Mono for Powerline:size=10:antialias=true:hinting=true
-
-URxvt.depth: 32
-URxvt.background: [80]#000000
