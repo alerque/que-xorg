@@ -1,3 +1,6 @@
+# Use xrdb -merge <file> to make this machine specific?
+Xft.dpi:  288
+
 *ScrollbarPlacement: left
 Xft.antialias:  true
 Xft.rgba:       rgb
