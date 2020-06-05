@@ -1,5 +1,6 @@
 *
 !/bin
+!/bin/disp
 !/bin/pre_lock.zsh
 !/.config
 !/.config/compton.conf
