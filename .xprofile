@@ -60,19 +60,6 @@ case $HOSTNAME in
     aslan)
         disp landscape
         ;;
-    lemur)
-        #xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x400 --output DVI-I-2 --mode 1680x1050 --pos 1920x0 --rotate right
-        xrandr --output DVI-I-1 --auto --output DVI-I-2 --auto --right-of DVI-I-1
-        killall evrouter
-        hash evrouter && find /dev/input/by-id -name '*Griffin*' -exec evrouter {} \;
-
-        # Map pen to just one monitor
-        xsetwacom --set "Wacom Intuos PT S Pen stylus" MapToOutput DVI-I-2
-        xsetwacom --set "Wacom Intuos PT S Pen eraser" MapToOutput DVI-I-2
-
-        # Increase touch gesture scroll sensitivity
-        xsetwacom --set "Wacom Intuos PT S Finger touch" ScrollDistance 20
-		;;
     jaguar)
         xrandr --output HDMI-1 --auto --output HDMI-2 --auto --right-of HDMI-1
         # evrouter -q
