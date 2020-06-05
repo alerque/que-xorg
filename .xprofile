@@ -20,7 +20,7 @@ uim-toolbar-gtk3-systray &
 
 # Setup HiDPI support
 export DPI=$(xdpyinfo | grep resolution | awk -F'[x ]*' '{print $3}')
-if [[ $DPI -ge 156 ]]; then
+if [[ $DPI -ge 192 ]]; then
     export GDK_SCALE=2
     export GDK_DPI_SCALE=0.8
 fi
