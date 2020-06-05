@@ -23,5 +23,12 @@ case $HOSTNAME in
 				;;
 		esac
 		xrandr --output DisplayPort-0 --set TearFree on --output DisplayPort-1 --set TearFree on
-	;;
+		;;
+	jaguar)
+		case $1 in
+			*|landscape)
+			xrandr --output HDMI-1 --auto --output HDMI-2 --auto --right-of HDMI-1
+			;;
+		esac
+		;;
 esac
