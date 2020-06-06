@@ -58,10 +58,10 @@ setkbd() {
 
 case $HOSTNAME in
     aslan)
-        disp landscape
+        ~/bin/disp landscape
         ;;
     jaguar)
-        disp landscape
+        ~/bin/disp landscape
         # evrouter -q
         # hash evrouter && evrouter /dev/input/event*
         hash powermate && powermate -d
