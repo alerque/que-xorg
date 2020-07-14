@@ -18,6 +18,8 @@ export LIBUIM_ENABLE_EMERGENCY_KEY=1
 uim-xim &
 uim-toolbar-gtk3-systray &
 
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+
 # Setup HiDPI support
 export DPI=$(xdpyinfo | grep resolution | awk -F'[x ]*' '{print $3}')
 if [[ $DPI -ge 192 ]]; then
