@@ -1,4 +1,5 @@
 [Added Associations]
+x-scheme-handler/magnet=transmission-gtk.desktop
 application/pdf=evince.desktop
 application/x-bzpdf=evince.desktop
 application/x-gzpdf=evince.desktop
@@ -113,4 +114,5 @@ x-content/video-svcd=smplayer.desktop
 application/octet-stream=gedit.desktop;
 
 [Default Applications]
+x-scheme-handler/magnet=transmission-gtk.desktop
 x-scheme-handler/tg=telegramdesktop.desktop
