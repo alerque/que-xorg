@@ -9,6 +9,7 @@ include "%L" # Inherit current locale's default Compose map
 <Multi_key> <=> <~> : "≅" U2245 # APPROXIMATELY EQUAL TO
 <Multi_key> <~> <~> : "≈" U2248 # ALMOST EQUAL TO
 <Multi_key> <0> <0> : "∞" U221E # INFINITY
+<Multi_key> <n> <o> : "№" U2116 # NUMERO SIGN
 
 # <S> <O> is § Section Sign
 # https://help.ubuntu.com/community/GtkComposeTable
