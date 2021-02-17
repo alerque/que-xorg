@@ -24,6 +24,39 @@ case $HOSTNAME in
 		esac
 		xrandr --output DisplayPort-0 --set TearFree on --output DisplayPort-1 --set TearFree on
 		;;
+	emircik)
+		case $1 in
+				split)
+					# 295mm x 164mm
+					# 3200 x 1800
+					# xrandr --delmonitor eDP1-3
+					# xrandr --delmonitor eDP1-2
+					# xrandr --delmonitor eDP1-1
+					# xrandr --setmonitor eDP1-1 1600/147x1800/164+0+0 eDP1~1
+					# xrandr --setmonitor eDP1-2 1600/147x900/82+1600+0 eDP1~2
+					# xrandr --setmonitor eDP1-3 1600/147x900/82+1600+900 eDP1~3
+					xrandr --addmode VIRTUAL1 640x480
+					xrandr --output VIRTUAL1 --mode 640x480 --right-of eDP1
+					# xrandr --output VIRTUAL1 --off --output eDP1~1 --primary --mode 1600x1800 --pos 0x0 --rotate normal --output eDP1~2 --mode 1600x900 --pos 1600x0 --rotate normal --output eDP1~3 --mode 1600x900 --pos 1600x900 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off
+					# xrandr --fb 3201x1800
+					# xrandr --fb 3200x1800
+					;;
+				4k)
+					xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 3200x1800 --pos 0x0 --rotate normal --output DP1 --mode 1920x1080 --pos 3200x0 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off
+					;;
+				internal)
+					xrandr --delmonitor eDP1-3
+					xrandr --delmonitor eDP1-2
+					xrandr --delmonitor eDP1-1
+					xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 3200x1800 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off
+					;;
+				projector)
+					# xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 3200x1800 --pos 0x0 --rotate normal --output DP1 --mode 1280x800 --pos 3200x0 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off
+					xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 3200x1800 --pos 0x0 --rotate normal --output DP1 --mode 1920x1080 --pos 3200x0 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off
+					bluetoothctl connect C8:84:47:01:E2:69
+					;;
+		esac
+		;;
 	jaguar)
 		case $1 in
 			*|landscape)
