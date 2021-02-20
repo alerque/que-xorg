@@ -14,7 +14,10 @@ case $HOSTNAME in
 			projector-on)
 				xrandr --output HDMI-A-0 --mode 1920x1080 --pos 7680x0
 				;;
-			projector-off)
+			tv-on)
+				xrandr --output HDMI-A-0 --mode 1680x1050 --pos 7680x0
+				;;
+			projector-off|tv-off)
 				xrandr --output HDMI-A-0 --off
 				;;
 			*|landscape)
