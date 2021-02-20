@@ -105,7 +105,7 @@ case $DESKTOP_SESSION in
         runifhas cbatticon
         runifhas synergy
         runifhas flameshot
-        runifhas picom || runifhas compton --config ~/.config/compton.conf
+        runifhas picom --experimental-backends || runifhas compton --config ~/.config/compton.conf
         runifhas xss-lock -n ~/bin/pre_lock.zsh -- slock
     ;;
 esac
