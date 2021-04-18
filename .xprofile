@@ -62,6 +62,7 @@ case $HOSTNAME in
     aslan)
         ~/bin/disp landscape
         powermate -d
+        barriers
         ;;
     jaguar)
         ~/bin/disp landscape
@@ -90,6 +91,7 @@ case $HOSTNAME in
         }
         xinput set-prop $tpid $(getprop "Tapping") 1
         xinput set-prop $tpid $(getprop "Natural Scrolling") 1
+        barrierc aslan
         ;;
 esac
 
@@ -104,7 +106,6 @@ case $DESKTOP_SESSION in
         runifhas gpaste-client applet
         runifhas nextcloud
         runifhas cbatticon
-        runifhas synergy
         runifhas flameshot
         runifhas picom --experimental-backends || runifhas compton --config ~/.config/compton.conf
         runifhas xss-lock -n ~/bin/pre_lock.zsh -- slock
