@@ -69,6 +69,7 @@ case $HOSTNAME in
         # evrouter -q
         # hash evrouter && evrouter /dev/input/event*
         hash powermate && powermate -d
+        barriers
 
         # Map pen to just one monitor
         xsetwacom --set "Wacom Intuos PT S Pen stylus" MapToOutput HEAD-1
