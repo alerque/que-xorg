@@ -4,6 +4,7 @@
 !/.config/alacritty/alacritty.yml
 !/.config/parcellite/parcelliterc
 !/.config/picom.conf
+!/.config/sway/config
 !/.config/termite/config
 !/.conkyrc
 !/.evrouterrc
