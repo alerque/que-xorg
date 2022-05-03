@@ -46,22 +46,13 @@ myxsets() {
 	xset s $((3*60*19)) $((2*60*19))
 	xset b off
 	xset r rate 250 50
-	xsetroot -solid black
 	xsetroot -cursor_name arrow
-}
-
-setkbd() {
-	setxkbmap $1
-	setxkbmap -option
-	setxkbmap -option nbsp:zwnj2nb3nnb4
-	setxkbmap -option compose:menu
-	setxkbmap -option lv3:caps_switch
 }
 
 case $HOSTNAME in
     aslan)
         ~/bin/disp landscape
-        powermate -d
+        # powermate -d
         barriers
         ;;
     jaguar)
@@ -99,13 +90,11 @@ esac
 case $DESKTOP_SESSION in
     awesome)
         myxsets
-        setkbd dvp
-        eval $(~/bin/que-auth.zsh)
-        runifhas nm-applet --sm-disable
+        eval $(~/bin/que-auth.zsh agentsonly)
+        runifhas keepassxc
         runifhas blueman-applet || runifhas bluetooth-applet
         runifhas pa-applet || runifhas pasystray
         runifhas gpaste-client applet
-        runifhas nextcloud
         runifhas cbatticon
         runifhas flameshot
         runifhas picom --experimental-backends || runifhas compton --config ~/.config/compton.conf
