@@ -90,8 +90,8 @@ esac
 case $DESKTOP_SESSION in
     awesome)
         myxsets
-        eval $(~/bin/que-auth.zsh agentsonly)
         runifhas keepassxc
+        eval $(~/bin/que-auth.zsh agentsonly)
         runifhas blueman-applet || runifhas bluetooth-applet
         runifhas pa-applet || runifhas pasystray
         runifhas gpaste-client applet
