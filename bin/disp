@@ -63,7 +63,7 @@ case $HOSTNAME in
 	jaguar)
 		case $1 in
 			*|landscape)
-			xrandr --output HDMI-1 --auto --output HDMI-2 --auto --right-of HDMI-1
+			xrandr --output HDMI-A-0 --auto --output DVI-D-0 --auto --right-of HDMI-A-0
 			;;
 		esac
 		;;
