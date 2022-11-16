@@ -2,6 +2,7 @@
 !/bin/disp
 !/bin/pre_lock.zsh
 !/.config/alacritty/alacritty.yml
+!/.config/chrysalis/config.json
 !/.config/chrysalis/layout_atreus.json
 !/.config/chrysalis/layout_model100.json
 !/.config/parcellite/parcelliterc

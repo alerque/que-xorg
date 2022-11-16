@@ -1,0 +1,21 @@
+{
+	"ui": {
+		"layoutCards": {
+			"oneLayerPerPage": true
+		}
+	},
+	"breaking-news": {
+		"seen": {
+			"firmware": {
+				"0": {
+					"90": {
+						"1": true
+					}
+				}
+			}
+		}
+	},
+	"keyboard": {
+		"layout": "United States-Dvorak"
+	}
+}
