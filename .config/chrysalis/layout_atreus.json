@@ -46,18 +46,8 @@
       {"code": 6, "label": {"base": "j", "shifted": "J"}},
       {"code": 25, "label": {"base": "k", "shifted": "K"}},
       {"code": 5, "label": {"base": "x", "shifted": "X"}},
-      {
-        "code": 226,
-        "label": {"base": "Alt"},
-        "location": "left",
-        "categories": ["modifier"]
-      },
-      {
-        "code": 228,
-        "label": {"base": {"full": "Control", "1u": "Ctrl"}},
-        "location": "right",
-        "categories": ["modifier"]
-      },
+      {"code": 73, "label": {"base": {"full": "Insert", "1u": "Ins"}}},
+      {"code": 101, "label": {"base": "Menu"}},
       {"code": 17, "label": {"base": "b", "shifted": "B"}},
       {"code": 16, "label": {"base": "m", "shifted": "M"}},
       {"code": 54, "label": {"base": "w", "shifted": "W"}},
@@ -65,10 +55,9 @@
       {"code": 56, "label": {"base": "z", "shifted": "Z"}},
       {"code": 41, "label": {"base": "Esc"}},
       {"code": 43, "label": {"base": "Tab"}},
-      {"code": 73, "label": {"base": {"full": "Insert", "1u": "Ins"}}},
       {
-        "code": 224,
-        "label": {"base": {"full": "Control", "1u": "Ctrl"}},
+        "code": 227,
+        "label": {"base": {"full": "Super", "1u": "Sup.", "short": "Su"}},
         "location": "left",
         "categories": ["modifier"]
       },
@@ -79,13 +68,17 @@
         "categories": ["modifier"]
       },
       {
-        "code": 227,
-        "label": {"base": {"full": "Super", "1u": "Sup.", "short": "Su"}},
+        "code": 224,
+        "label": {"base": {"full": "Control", "1u": "Ctrl"}},
         "location": "left",
         "categories": ["modifier"]
       },
-      {"code": 40, "label": {"base": "Enter"}},
-      {"code": 44, "label": {"base": "Space", "shifted": "Space"}},
+      {
+        "code": 226,
+        "label": {"base": "Alt"},
+        "location": "left",
+        "categories": ["modifier"]
+      },
       {
         "code": 17451,
         "label": {"hint": "ShiftTo", "base": "#1"},
@@ -93,6 +86,8 @@
         "rangeStart": 17450,
         "categories": ["layer", "shifttolayer"]
       },
+      {"code": 40, "label": {"base": "Enter"}},
+      {"code": 44, "label": {"base": "Space", "shifted": "Space"}},
       {"code": 47, "label": {"base": "/", "shifted": "?"}},
       {"code": 52, "label": {"base": "-", "shifted": "_"}},
       {"code": 42, "label": {"base": {"full": "Backspace", "1u": "Bksp"}}}
