@@ -13,8 +13,8 @@
         "categories": ["ledkeys"]
       },
       {
-        "code": 224,
-        "label": {"base": {"full": "Control", "1u": "Ctrl"}},
+        "code": 227,
+        "label": {"base": {"full": "Super", "1u": "Sup.", "short": "Su"}},
         "location": "left",
         "categories": ["modifier"]
       },
@@ -61,8 +61,8 @@
       {"code": 10, "label": {"base": "i", "shifted": "I"}},
       {"code": 73, "label": {"base": {"full": "Insert", "1u": "Ins"}}},
       {
-        "code": 227,
-        "label": {"base": {"full": "Super", "1u": "Sup.", "short": "Su"}},
+        "code": 224,
+        "label": {"base": {"full": "Control", "1u": "Ctrl"}},
         "location": "left",
         "categories": ["modifier"]
       },
