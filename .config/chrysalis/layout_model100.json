@@ -13,10 +13,11 @@
         "categories": ["ledkeys"]
       },
       {
-        "code": 227,
-        "label": {"base": {"full": "Super", "1u": "Sup.", "short": "Su"}},
-        "location": "left",
-        "categories": ["modifier"]
+        "code": 17452,
+        "label": {"hint": "ShiftTo", "base": "#2"},
+        "target": 2,
+        "rangeStart": 17450,
+        "categories": ["layer", "shifttolayer"]
       },
       {"code": 101, "label": {"base": "Menu"}},
       {"code": 75, "label": {"base": {"full": "Page Up", "1u": "PgUp"}}},
@@ -86,11 +87,10 @@
       {"code": 25, "label": {"base": "k", "shifted": "K"}},
       {"code": 5, "label": {"base": "x", "shifted": "X"}},
       {
-        "code": 17452,
-        "label": {"hint": "ShiftTo", "base": "#2"},
-        "target": 2,
-        "rangeStart": 17450,
-        "categories": ["layer", "shifttolayer"]
+        "code": 227,
+        "label": {"base": {"full": "Super", "1u": "Sup.", "short": "Su"}},
+        "location": "left",
+        "categories": ["modifier"]
       },
       {
         "code": 226,
