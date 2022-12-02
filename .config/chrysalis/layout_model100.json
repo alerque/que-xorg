@@ -475,15 +475,12 @@
         "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
+      {"code": 53, "label": {"base": "`", "shifted": "~"}},
       {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
-      },
-      {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
+        "code": 2101,
+        "label": {"hint": null, "base": "~"},
+        "categories": ["with-modifiers", "shift"],
+        "baseCode": 53
       },
       {
         "code": 65535,
@@ -538,14 +535,16 @@
         "categories": ["blanks"]
       },
       {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
+        "code": 2096,
+        "label": {"hint": null, "base": "+"},
+        "categories": ["with-modifiers", "shift"],
+        "baseCode": 48
       },
       {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
+        "code": 2097,
+        "label": {"hint": null, "base": "|"},
+        "categories": ["with-modifiers", "shift"],
+        "baseCode": 49
       },
       {"code": 69, "label": {"base": "F12"}},
       {
@@ -638,10 +637,9 @@
         "baseCode": 45
       },
       {
-        "code": 2097,
-        "label": {"hint": null, "base": "|"},
-        "categories": ["with-modifiers", "shift"],
-        "baseCode": 49
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
       },
       {
         "code": 65535,
@@ -693,10 +691,9 @@
       {"code": 48, "label": {"base": "=", "shifted": "+"}},
       {"code": 49, "label": {"base": "\\", "shifted": "|"}},
       {
-        "code": 2096,
-        "label": {"hint": null, "base": "+"},
-        "categories": ["with-modifiers", "shift"],
-        "baseCode": 48
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
       }
     ],
     [
@@ -2383,12 +2380,12 @@
       15,
       1,
       2,
-      15,
+      1,
       12,
       1,
       1,
       12,
-      15,
+      1,
       2,
       2,
       15,
@@ -2431,17 +2428,17 @@
       15,
       2,
       2,
-      15,
-      12,
-      1,
       1,
       12,
-      15,
-      2,
-      2,
-      2,
       1,
-      1
+      1,
+      12,
+      1,
+      2,
+      2,
+      2,
+      15,
+      15
     ],
     [
       15,
