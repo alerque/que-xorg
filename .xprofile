@@ -54,6 +54,21 @@ case $HOSTNAME in
         ~/bin/disp landscape
         # powermate -d
         barriers
+
+        # Map pen to just one monitor
+        xsetwacom --set "Wacom Intuos PT S Pen stylus" MapToOutput DisplayPort-0
+        xsetwacom --set "Wacom Intuos PT S Pen eraser" MapToOutput DisplayPort-0
+
+        # Increase touch gesture scroll sensitivity
+        xsetwacom --set "Wacom Intuos PT S Finger touch" ScrollDistance 20
+
+        # Setup touch mode to absolute and map to screen area
+        # xsetwacom --set "Wacom Intuos PT S Finger touch" Mode absolute
+        # xsetwacom --set "Wacom Intuos PT S Finger touch" Area 0 2048 4096 4096
+        xsetwacom --set "Wacom Intuos PT S Finger touch" Mode relative
+        xinput set-prop 'Wacom Intuos PT S Finger touch' 'Device Accel Velocity Scaling' 5
+        xinput set-prop 'Wacom Intuos PT S Finger touch' 'Device Accel Constant Deceleration' 2
+
         ;;
     jaguar)
         ~/bin/disp landscape
