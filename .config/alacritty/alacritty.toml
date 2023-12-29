@@ -1,0 +1,38 @@
+[bell]
+animation = "EaseOutQuad"
+color = "#ffffff"
+duration = 250
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.cursor]
+cursor = "#99CC99"
+text = "#000000"
+
+[colors.normal]
+black = "#000000"
+blue = "#0033FF"
+cyan = "#00FFFF"
+green = "#00EE00"
+magenta = "#FF00FF"
+red = "#FF0000"
+white = "#FFFFFF"
+yellow = "#FFFF00"
+
+[colors.primary]
+background = "#000000"
+foreground = "#eaeaea"
+
+[font]
+size = 14
+
+[font.normal]
+family = "Hack Nerd Font"
+
+[scrolling]
+history = 0
+
+[window]
+dynamic_padding = true
+opacity = 0.85
