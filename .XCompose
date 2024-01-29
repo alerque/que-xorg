@@ -5,12 +5,11 @@ include "%L" # Inherit current locale's default Compose map
 <Multi_key> <x> <minus> : "✗" U2717 # BALLOT X
 <Multi_key> <asterisk> <asterisk> : "•" U2022 # BULLET
 <Multi_key> <equal> <minus> : "☰" U2630 # TRIGRAM FOR HEAVEN
-<Multi_key> <semicolon> <semicolon> : "⋮" U22EE # VERTICAL ELLIPSIS
+<Multi_key> <colon> <colon> : "⋮" U22EE # VERTICAL ELLIPSIS
 <Multi_key> <equal> <asciitilde> : "≅" U2245 # APPROXIMATELY EQUAL TO
 <Multi_key> <asciitilde> <asciitilde> : "≈" U2248 # ALMOST EQUAL TO
 <Multi_key> <0> <0> : "∞" U221E # INFINITY
 <Multi_key> <n> <o> : "№" U2116 # NUMERO SIGN
 
-# <S> <O> is § Section Sign
 # https://help.ubuntu.com/community/GtkComposeTable
 # https://fsymbols.com/keyboard/linux/compose/
