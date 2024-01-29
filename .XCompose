@@ -1,13 +1,13 @@
 include "%L" # Inherit current locale's default Compose map
 <Multi_key> <t> <l> : "₺" U20BA # TURKISH LIRA SIGN
 <Multi_key> <t> <e> : "₸" U20B8 # TENGE SIGN
-<Multi_key> <x> <+> : "✔" U2714 # HEAVY CHECK MARK
-<Multi_key> <x> <-> : "✗" U2717 # BALLOT X
-<Multi_key> <*> <*> : "•" U2022 # BULLET
-<Multi_key> <=> <-> : "☰" U2630 # TRIGRAM FOR HEAVEN
-<Multi_key> <:> <:> : "⋮" U22EE # VERTICAL ELLIPSIS
-<Multi_key> <=> <~> : "≅" U2245 # APPROXIMATELY EQUAL TO
-<Multi_key> <~> <~> : "≈" U2248 # ALMOST EQUAL TO
+<Multi_key> <x> <plus> : "✔" U2714 # HEAVY CHECK MARK
+<Multi_key> <x> <minus> : "✗" U2717 # BALLOT X
+<Multi_key> <asterisk> <asterisk> : "•" U2022 # BULLET
+<Multi_key> <equal> <minus> : "☰" U2630 # TRIGRAM FOR HEAVEN
+<Multi_key> <semicolon> <semicolon> : "⋮" U22EE # VERTICAL ELLIPSIS
+<Multi_key> <equal> <asciitilde> : "≅" U2245 # APPROXIMATELY EQUAL TO
+<Multi_key> <asciitilde> <asciitilde> : "≈" U2248 # ALMOST EQUAL TO
 <Multi_key> <0> <0> : "∞" U221E # INFINITY
 <Multi_key> <n> <o> : "№" U2116 # NUMERO SIGN
 
